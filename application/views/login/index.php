@@ -41,10 +41,8 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <div class="login-logo">
-      <p style="font-size: 14pt"><b>Sistem Informasi Vendor Monitoring </b></p>
-      <img src="<?=base_url('assets/img/'); ?>logo-eprime.jpg" width="100px" height="100px">
+      <p style="font-size: 14pt"><b>Sistem Informasi Waris </b></p>
       </br>
-      <b><p style="font-size: 14pt;">Pusintek</p></b>
     </div>
     <p class="login-box-msg"></p>
     <script type="text/javascript">
@@ -55,11 +53,11 @@
     </script>
     <?php echo form_open('Login/proses_login', ''); ?>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Email" name="Email">
+        <input type="text" class="form-control" placeholder="username" name="username" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="Password">
+        <input type="password" class="form-control" placeholder="password" name="password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">

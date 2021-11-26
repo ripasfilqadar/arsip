@@ -3,6 +3,7 @@ class MY_Controller extends CI_Controller {
   public $current_user;
   public $controller;
   public $table_name, $data;
+	public $upload_folder;
 	function __construct()
 	{
       parent::__construct();
@@ -28,7 +29,26 @@ class MY_Controller extends CI_Controller {
 
   function create(){
     $this->data = $this->input->post();
-    $this->{$this->table_name}->Create($this->data);
+		$files = $_FILES;
+		foreach ($files as $key => $value) {
+			$this->data[$key] = str_replace(' ', '_', $files[$key]['name']) ;
+		}
+    $id = $this->{$this->table_name}->Create($this->data);
+		$path = './uploads/'.$this->upload_folder.'/'.$id;
+		
+		$config['upload_path']          = $path;
+		$config['max_size']             = 10000;
+		$config['allowed_types'] = '*';
+		$this->load->library('upload', $config);
+	
+		if(!is_dir($path)){
+			mkdir($path, 0777, true);
+		}
+		foreach ($files as $key => $value) {
+			$config['file_name'] = str_replace(' ', '_', $files[$key]['name']) ;;
+			$this->upload->initialize($config);
+			$this->upload->do_upload($key);
+		}
     redirect($this->controller,'refresh');
   }
 
@@ -41,6 +61,17 @@ class MY_Controller extends CI_Controller {
 		$this->load->view($this->controller.'/edit', $this->data);
 		$this->load->view('footer');
   }
+
+	function detail($id){
+    $this->data['data'] = $this->{$this->table_name}->GetById($id);
+    $this->data['false'] = true;
+    $this->data['id'] = $id;
+    $this->load->view('header', $this->data);
+		$this->load->view($this->controller.'/detail', $this->data);
+		$this->load->view('footer');
+  }
+
+
   function update($id){
     $this->data = $this->input->post();
     $this->{$this->table_name}->Update($id, $this->data);

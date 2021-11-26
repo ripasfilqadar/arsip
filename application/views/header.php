@@ -45,9 +45,9 @@
         <!-- Logo -->
         <a href="<?= site_url('Welcome') ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>SIVENOM</b></span>
+          <span class="logo-mini"><b>Waris</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>SIVENOM</b> </span>
+          <span class="logo-lg"><b>Waris</b> </span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -63,13 +63,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="hidden-xs"><?= $_SESSION['user']['Nama']; ?></span>
+                  <span class="hidden-xs"><?= $_SESSION['user']['username']; ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <p>
-                      <?= $_SESSION['user']['Nama']; ?>
+                      <?= $_SESSION['user']['username']; ?>
                       <!-- <small>Member since Jan. 2017</small> -->
                     </p>
                   </li>
@@ -96,14 +96,9 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <ul class="sidebar-menu">
-            <li><a href="<?= site_url('Kontrak'); ?>"><i class="fa fa-envelope"></i> Kontrak</a></li>
-            <li><a href="<?= site_url('UserVendor'); ?>"><i class="fa fa-envelope"></i> User Vendor</a></li>
-            <?php if(!isset($_SESSION['user']['VendorId'])) {
-              ?>
-              <li><a href="<?= site_url('Vendor'); ?>"><i class="fa fa-envelope"></i> Vendor</a></li>
-              <li><a href="<?= site_url('UserPegawai'); ?>"><i class="fa fa-envelope"></i> User Pegawai</a></li>
-            <?php }?>
-
+            <li><a href="<?= site_url('SuratKeluar'); ?>"><i class="fa fa-envelope"></i> Surat Keluar</a></li>
+            <li><a href="<?= site_url('SuratMasuk'); ?>"><i class="fa fa-envelope"></i> Surat Masuk</a></li>
+						<li><a href="<?= site_url('Laporan'); ?>"><i class="fa fa-envelope"></i> Laporan</a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

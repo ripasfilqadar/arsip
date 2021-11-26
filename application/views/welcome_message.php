@@ -14,10 +14,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="login-logo">
-          <p style="font-size: 14pt"><b>Sistem Vendor Monitoring  </b></p>
-          <img src="<?=base_url('assets/img/'); ?>logo_kemenkeu.PNG" width="400px" height="300px">
-          </br>
-          <b><p style="font-size: 14pt;">Pusintek</p></b>
+          <p style="font-size: 14pt"><b>Sistem Pencatatan Kearsipan </b></p>
         </div>
       </div><!-- /.col (left) -->
     </div><!-- /.row -->
