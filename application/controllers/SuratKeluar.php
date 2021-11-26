@@ -8,17 +8,5 @@ class SuratKeluar extends MY_Controller{
   {
     parent::__construct();
   }
-
-	function Download($id = "", $file = "")
-	{
-		$this->load->helper('url');
-		$path = FCPATH.'/uploads/surat_keluar/'.$id.'/'.$file;
-		$data = file_get_contents($path); // Read the file's contents
-		var_dump($this->uri->rsegment_array());
-		$this->load->helper('download');
-		echo($path);
-		var_dump($data);
-		force_download($file, $data);
-	}
 }
 ?>

@@ -99,6 +99,8 @@
             <li><a href="<?= site_url('SuratKeluar'); ?>"><i class="fa fa-envelope"></i> Surat Keluar</a></li>
             <li><a href="<?= site_url('SuratMasuk'); ?>"><i class="fa fa-envelope"></i> Surat Masuk</a></li>
 						<li><a href="<?= site_url('Laporan'); ?>"><i class="fa fa-envelope"></i> Laporan</a></li>
+						<li><a href="<?= site_url('Karyawan'); ?>"><i class="fa fa-envelope"></i> Data Karyawan</a></li>
+						<li><a href="<?= site_url('Siswa'); ?>"><i class="fa fa-envelope"></i> Data Siswa</a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

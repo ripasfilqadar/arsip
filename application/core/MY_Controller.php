@@ -89,5 +89,17 @@ class MY_Controller extends CI_Controller {
   function IsVendor(){
     return $this->current_user->VendorId != null;
   }
+
+	function Download($id = "", $file = "")
+	{
+		$this->load->helper('url');
+		$path = FCPATH.'/uploads/'.$this->upload_folder.'/'.$id.'/'.$file;
+		$data = file_get_contents($path); // Read the file's contents
+		var_dump($this->uri->rsegment_array());
+		$this->load->helper('download');
+		echo($path);
+		var_dump($data);
+		force_download($file, $data);
+	}
 }
 ?>
