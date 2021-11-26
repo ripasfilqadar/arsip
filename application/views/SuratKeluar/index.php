@@ -28,7 +28,7 @@
                   <div style="float: right;margin-bottom: 10px">
                     <a class="btn btn-sm btn-info btn-flat pull-right open-modal-st" data-toggle="modal" data-target="#modal-st"><i class="fa fa-plus"></i></a>
                   </div>
-                  <table id="tSordatatabletable" class="table table-bordered table-hover jambo_table" cellspacing="0" width="100%">
+                  <table id="suratTable" class="table table-bordered table-hover jambo_table" cellspacing="0" width="100%">
                     <thead>
                       <tr>
                           <th width="25%">No Surat</th>
@@ -43,7 +43,7 @@
                     <?php
                       foreach ($data as $surat){
                         ?>
-                      <tr data-vendor='<?php echo json_encode($surat)?>'>
+                      <tr data-surat='<?php echo json_encode($surat)?>'>
                         <td> <?php echo $surat['no_surat'];?>
                         <td> <?php
 												$phpdate = strtotime( $surat['tanggal_surat'] );
@@ -63,6 +63,9 @@
                             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                           </button>
                         </a>
+												<button type="button" class="btn btn-danger js-btn-delete" aria-label="Left Align">
+                          <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span>
+                        </button>
                       </tr>
                       <?php }?>
                     </tbody>
@@ -101,7 +104,7 @@
 <script>
 $(document).ready(function() {
   var data = <?php echo json_encode($data); ?>;
-  var table = $('#tSordatatabletable').DataTable();
+  var table = $('#suratTable').DataTable();
 
   $('.js-datatable-search').on( 'keyup', function () {
     table.search( this.value ).draw();

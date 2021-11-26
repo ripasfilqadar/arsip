@@ -74,12 +74,32 @@ class MY_Controller extends CI_Controller {
 
   function update($id){
     $this->data = $this->input->post();
+    
+    $files = $_FILES;
+		foreach ($files as $key => $value) {
+			$this->data[$key] = str_replace(' ', '_', $files[$key]['name']) ;
+		}
     $this->{$this->table_name}->Update($id, $this->data);
+		$path = './uploads/'.$this->upload_folder.'/'.$id;
+		
+		$config['upload_path']          = $path;
+		$config['max_size']             = 10000;
+		$config['allowed_types'] = '*';
+		$this->load->library('upload', $config);
+	
+		if(!is_dir($path)){
+			mkdir($path, 0777, true);
+		}
+		foreach ($files as $key => $value) {
+			$config['file_name'] = str_replace(' ', '_', $files[$key]['name']) ;;
+			$this->upload->initialize($config);
+			$this->upload->do_upload($key);
+		}
     redirect($this->controller.'/index');
   }
 
   function delete(){
-    $id = $this->input->post('Id');
+    $id = $this->input->post('id');
     
     $this->{$this->table_name}->Delete($id);
     redirect($this->controller,'refresh');
@@ -95,10 +115,7 @@ class MY_Controller extends CI_Controller {
 		$this->load->helper('url');
 		$path = FCPATH.'/uploads/'.$this->upload_folder.'/'.$id.'/'.$file;
 		$data = file_get_contents($path); // Read the file's contents
-		var_dump($this->uri->rsegment_array());
 		$this->load->helper('download');
-		echo($path);
-		var_dump($data);
 		force_download($file, $data);
 	}
 }

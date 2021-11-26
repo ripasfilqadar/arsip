@@ -43,7 +43,7 @@
 							</tr>
 							<tr>
 								<th>Download Naskah</th>
-								<td> <a href="<?php echo base_url().'SuratMasuk/Download/'.$data['id'].'/'.$data['file_surat']?>"> Download </td>
+								<td> <a href="<?php echo base_url().'SuratMasuk/Download/'.$data['id'].'/'.$data['file_surat']?>"> <?php echo $data['file_surat']?>(Download)  </td>
 							</tr>
 						</tbody>
 					</table>
@@ -53,7 +53,7 @@
 			  </div>
 			</div>
 		  </div>
-		  <a href="<?php echo base_url().'SuratKeluar'?> "><button class="btn btn-primary"> Kembali </button></a>
+		  <a href="<?php echo base_url().'SuratMasuk'?> "><button class="btn btn-primary"> Kembali </button></a>
 		  
 		</section>
 </div>
