@@ -41,7 +41,7 @@ if(isset($isEdit)){
                 </div>  
 								<div class="form-group">
                   <label >File Surat</label>
-                  <input type="file" required class="form-control" name="file_surat" placeholder="File Surat" >
+                  <input type="file"  class="form-control" name="file_surat" placeholder="File Surat" >
                 </div>          
               </div>
             </div>

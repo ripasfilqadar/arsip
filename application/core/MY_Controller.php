@@ -52,6 +52,13 @@ class MY_Controller extends CI_Controller {
     redirect($this->controller,'refresh');
   }
 
+	function new(){        
+    $this->data['form'] = $this->load->view($this->controller.'/form', $this->data, TRUE);
+    $this->load->view('header', $this->data);
+		$this->load->view($this->controller.'/new', $this->data);
+		$this->load->view('footer');
+  }
+
   function edit($id){
     $this->data['data'] = $this->{$this->table_name}->GetById($id);
     $this->data['isEdit'] = true;
@@ -77,6 +84,9 @@ class MY_Controller extends CI_Controller {
     
     $files = $_FILES;
 		foreach ($files as $key => $value) {
+			if(empty($files[$key]['name']) ){
+				continue;
+			}
 			$this->data[$key] = str_replace(' ', '_', $files[$key]['name']) ;
 		}
     $this->{$this->table_name}->Update($id, $this->data);
