@@ -7,9 +7,6 @@ class SuratKeluar extends MY_Controller{
   public function __construct()
   {
     parent::__construct();
-    if($this->IsVendor()){
-      redirect('Welcome');
-    }
   }
 
 	function Download($id = "", $file = "")

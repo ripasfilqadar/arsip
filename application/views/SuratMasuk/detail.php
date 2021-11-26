@@ -24,8 +24,8 @@
 								<th> <?php echo $data['perihal']?> </th>
 							</tr>
 							<tr>
-								<th>Tujuan</th>
-								<th> <?php echo $data['tujuan']?> </th>
+								<th>Pengirim</th>
+								<th> <?php echo $data['pengirim']?> </th>
 							</tr>
 							<tr>
 								<th>Tanggal Surat</th>
@@ -35,8 +35,15 @@
 												 ?> </td>
 							</tr>
 							<tr>
+								<th>Tanggal Perekaman</th>
+								<td> <?php
+												$phpdate = strtotime( $data['tanggal_rekam'] );
+												echo date( 'd-M-Y', $phpdate ) 
+												 ?> </td>
+							</tr>
+							<tr>
 								<th>Download Naskah</th>
-								<td> <a href="<?php echo base_url().'SuratKeluar/Download/'.$data['id'].'/'.$data['file_surat']?>"> Download </td>
+								<td> <a href="<?php echo base_url().'SuratMasuk/Download/'.$data['id'].'/'.$data['file_surat']?>"> Download </td>
 							</tr>
 						</tbody>
 					</table>

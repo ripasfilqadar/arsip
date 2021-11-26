@@ -58,7 +58,7 @@ if(isset($isEdit)){
 
       </div>
       <div class="modal-footer">
-      <a href="<?=site_url('Vendor');?>"><button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button></a>
+      <a href="<?=site_url('SuratMasuk');?>"><button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button></a>
         <button type="submit" class="btn btn-primary">Simpan</button>
       </div>
     </div>
