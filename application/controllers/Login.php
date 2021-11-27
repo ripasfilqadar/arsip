@@ -25,5 +25,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
     }
 
+	function InitUser()
+	{
+		$this->load->database();
+        $this->load->model('M_User');
+		$this->M_User->init();
+	}
+
 
 }

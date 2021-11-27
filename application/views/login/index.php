@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Waris</title>
+  <title>Sistem Informasi Kearsipan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/'); ?>dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="<?= base_url('assets/'); ?>plugins/iCheck/square/blue.css">
+	<link ico
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,6 +26,7 @@
   <![endif]-->
 
   <!-- Google Font -->
+	<link rel="icon" href="<?php echo base_url().'assets/img/ico.ico'?>">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
       <!-- Toastr -->
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
@@ -36,13 +38,15 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="<?= base_url('assets/'); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<div class="login-box">
+<div class="login-box" style="margin: auto auto !important">
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <div class="login-logo">
-      <p style="font-size: 14pt"><b>Sistem Informasi Waris </b></p>
+    <div class="login-logo" style="margin-bottom: -60px !important;">
+			<img style="height: 300px;" src="<?php echo base_url().'assets/img/logo_slb.png'?>">
+      <p style="font-size: 14pt"><b>Sistem Informasi Arsip Sekolah(Waris) </b></p>
       </br>
+	
     </div>
     <p class="login-box-msg"></p>
     <script type="text/javascript">
@@ -76,6 +80,11 @@
   </div>
   <!-- /.login-box-body -->
 </div>
+<style>
+	.skin-green .main-header .logo{
+		background-color: #ffb500 !important;
+	}
+</style>
 <!-- /.login-box -->
 </body>
 </html>

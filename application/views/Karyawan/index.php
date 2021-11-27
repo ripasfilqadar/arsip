@@ -34,7 +34,7 @@
                           <th>Nama</th>
                           <th>Jabatan</th>
 													<th>Tanggal Lahir</th>						  
-													<th>NIP</th>
+													<th>NIP/NRPTK</th>
 													<th>NIK</th>
                           <th>Action</th>
                       </tr>
