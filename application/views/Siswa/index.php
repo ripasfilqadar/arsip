@@ -30,10 +30,14 @@
                   </div>
                   <table id="siswaTable" class="table table-bordered table-hover jambo_table" cellspacing="0" width="100%">
                     <thead>
-                      <tr>
-                          <th>Nama</th>
-													<th>Tanggal Lahir</th>						  
-													<th>Alamat</th>
+                      <tr>                          
+													<th>NISN</th>
+													<th>NIPD</th>
+													<th>Nama Siswa</th>
+													<th>Tempat Tanggal Lahir</th>						  
+													<th>Kelas</th>
+													<th>Wali Kelas</th>
+													<th>Keterangan</th>
                           <th>Action</th>
                       </tr>
                     </thead>
@@ -42,13 +46,17 @@
                       foreach ($data as $siswa){
                         ?>
                       <tr data-siswa='<?php echo json_encode($siswa)?>'>
-                        <td> <?php echo $siswa['nama'];?>
+												<td> <?php echo $siswa['nisn'];?>  
+												<td> <?php echo $siswa['nipd'];?>
+												<td> <?php echo $siswa['nama'];?>
                         <td> <?php
 													$phpdate = strtotime( $siswa['tanggal_lahir'] );
-													echo date( 'd-M-Y', $phpdate ) 
+													echo $siswa['tempat_lahir'].' '.date( 'd-M-Y', $phpdate ) 
 													?> 
 												</td>		
-												<td> <?php echo $siswa['alamat'];?>																												
+												<td> <?php echo $siswa['kelas'];?>																												
+												<td> <?php echo $siswa['wali_kelas'];?>
+												<td> <?php echo $siswa['keterangan'];?>
                         <td>
                         <a href="<?php echo site_url('Siswa/edit/'.$siswa['id']);?>">
                           <button type="button" class="btn btn-info " aria-label="Left Align">
